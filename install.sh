@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# 現在のユーザー名を取得
+# Get the current user
 CURRENT_USER=$(whoami)
 
-# 現在のディレクトリを取得
+# Get the current directory
 NVR_DIR=$(pwd)
 
-# スクリプトに権限を付与
+# Add execute permission to scripts
 chmod +x scripts/*.sh
 
-# 必要な依存関係をインストール
+# Install dependencies
 sudo apt-get update
 sudo apt-get install -y ffmpeg
 

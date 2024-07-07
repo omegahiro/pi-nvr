@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# サービスを停止して無効化
+# Stop and disable services
 sudo systemctl stop nvrweb.service
 sudo systemctl stop nvrrecord.service
 sudo systemctl stop nvrclean.timer
@@ -10,7 +10,7 @@ sudo systemctl disable nvrrecord.service
 sudo systemctl disable nvrclean.timer
 sudo systemctl disable nvrclean.service
 
-# サービスファイルを削除
+# Delete services
 sudo rm /etc/systemd/system/nvrweb.service
 sudo rm /etc/systemd/system/nvrrecord.service
 sudo rm /etc/systemd/system/nvrclean.service

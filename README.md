@@ -73,8 +73,8 @@ Edit the `service.conf` file to modify the following settings:
    Time interval for splitting recording data (in seconds)
  - IS_RASPBERRY_PI: Raspberry Piなら1、それ以外のOSでは0を設定してください。<br>
    Set this to 1 if you are using a Raspberry Pi, otherwise set it to 0
- - MAX_DISK_USAGE: ドライブの最大使用率（%）（ドライブ使用率がこの値を超えると最も古いデータが順に消去されます<br>
-   Maximum drive usage threshould (%) (oldest data will be deleted in order once this limit is reached)
+ - MAX_DISK_USAGE: ドライブの最大使用率（%）（ドライブ使用率がこの値を超えると最も古い録画データが順に消去されます<br>
+   Maximum drive usage threshould (%) (oldest recording will be deleted in order once this limit is reached)
 
 ## アンインストール手順 Uninstallation Steps
 1. **アンインストールスクリプトの実行 Run the Uninstallation Script**

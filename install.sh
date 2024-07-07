@@ -41,6 +41,28 @@ sudo systemctl enable nvrclean.timer
 sudo systemctl start nvrclean.timer
 echo "nvrclean.timer has been installed and started (4/4)"
 
+echo "Waiting for the services to start..."
+sleep 10
+
+# Check the services are running
+services=(
+    "nvrrecord.service"
+    "nvrclean.timer"
+    "nvrweb.service"
+)
+
+for service in "${services[@]}"
+do
+    if [ "$(systemctl is-active $service)" = "active" ]; then
+        echo "$service is running."
+    else
+        echo "$service is not running."
+        echo "Please check the logs by running 'journalctl -u $service'"
+        exit 1
+    fi
+done
+
+# Finish
 echo "NVR Installation Finished."
 IP_ADDRESS=$(hostname -I | awk '{print $1}')
 echo "Please access to http://$IP_ADDRESS to show the recorded videos."

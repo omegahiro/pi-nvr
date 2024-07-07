@@ -1,0 +1,10 @@
+[Unit]
+Description=NVR Remove old recording files
+
+[Service]
+ExecStart=/usr/bin/bash scripts/clean.sh
+WorkingDirectory=__NVR_DIR__
+User=__CURRENT_USER__
+
+[Install]
+WantedBy=multi-user.target

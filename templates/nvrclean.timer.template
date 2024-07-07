@@ -1,0 +1,10 @@
+[Unit]
+Description=Run nvrclean service every minute
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1min
+Unit=nvrclean.service
+
+[Install]
+WantedBy=timers.target

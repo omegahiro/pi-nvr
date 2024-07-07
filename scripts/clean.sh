@@ -4,7 +4,7 @@
 source service.conf
 
 # Path to the data folder
-data_folder="data"
+data_folder="data/records"
 
 
 # Function to check disk usage

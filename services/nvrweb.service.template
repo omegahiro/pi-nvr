@@ -3,9 +3,9 @@ Description=NVR HTTP Server
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 -m http.server 80
-WorkingDirectory=__NVR_DIR__/data
-User=root
+ExecStart=__NVR_DIR__/web/venv/bin/python3 app.py
+WorkingDirectory=__NVR_DIR__/web
+User=__CURRENT_USER__
 Restart=always
 
 [Install]

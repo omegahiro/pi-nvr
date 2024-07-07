@@ -19,7 +19,10 @@ It is designed for use with Raspberry Pi but is also compatible with Debian-base
 - 古い録画データの自動消去<br>
   Automatic deletion of old recording data
 - Webブラウザを経由した録画のダウンロード<br>
-  Downloading recordings via a web browser
+  Downloading recordings in your web browser
+- Webブラウザでライブ映像のストリーミング<br>
+  Streaming live video in your web browser
+  
 
 ![Example Image](https://github.com/omegahiro/pi-nvr/blob/master/docs/images/webdashboard.png)
 
@@ -56,12 +59,16 @@ It is designed for use with Raspberry Pi but is also compatible with Debian-base
     インストールスクリプトの実行が完了すると、自動的にサービスが開始されます。<br>
     Once the installation script completes, the services will start automatically.
 
+    他のPCからブラウザで`http://(IPアドレス):8081/`にアクセスすると録画ファイルを確認できます。<br>
+    Recorded files can be viewed from other computers by accessing http://(IP address):8081/ on a web browser.
+
 ## ログの確認方法 Checking Logs
 各サービスのログは次のコマンドで確認できます:<br>
 You can check the logs for each service using the following commands:
  - `sudo journalctl -u nvrrecord.service -f`
  - `sudo journalctl -u nvrclean.service -f`
  - `sudo journalctl -u nvrweb.service -f`
+ - `sudo journalctl -u nvrlive.service -f`
 
 ## 設定の変更方法 Modifying Settings
  `service.conf`ファイルを編集します。以下の設定を変更できます:<br>
@@ -102,3 +109,7 @@ Timer to periodically execute `nvrclean.service`.
 ### nvrweb.service
 録画ファイルを配信するためのWebサーバーサービスです。<br>
 Web server service to serve recorded files.
+
+### nvrlive.service
+ライブ配信のためにRTSPを取得してHLSとして保存するサービスです。<br>
+Service to convert RTSP to HLS for live streaming.

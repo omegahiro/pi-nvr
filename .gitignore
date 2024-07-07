@@ -1,1 +1,7 @@
 *.mp4
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.ts
+*.m3u8

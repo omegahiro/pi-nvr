@@ -59,8 +59,8 @@ It is designed for use with Raspberry Pi but is also compatible with Debian-base
     インストールスクリプトの実行が完了すると、自動的にサービスが開始されます。<br>
     Once the installation script completes, the services will start automatically.
 
-    他のPCからブラウザで`http://(IPアドレス):8081/`にアクセスすると録画ファイルを確認できます。<br>
-    Recorded files can be viewed from other computers by accessing http://(IP address):8081/ on a web browser.
+    他のPCからブラウザで`http://(IPアドレス):8000/`にアクセスすると録画ファイルを確認できます。<br>
+    Recorded files can be viewed from other computers by accessing http://(IP address):8000/ on a web browser.
 
 ## ログの確認方法 Checking Logs
 各サービスのログは次のコマンドで確認できます:<br>

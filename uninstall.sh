@@ -18,9 +18,6 @@ sudo rm /etc/systemd/system/nvrclean.timer
 sudo rm /etc/systemd/system/nvrclean.service
 sudo rm /etc/systemd/system/nvrlive.service
 
-# Remove the virtual environment
-rm -rf web/venv
-
 # Finish
 echo "NVR services have been stopped and removed."
 echo "If you want to remove ffmpeg, run 'sudo apt-get remove ffmpeg'."

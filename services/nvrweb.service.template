@@ -3,8 +3,8 @@ Description=NVR HTTP Server
 After=network.target
 
 [Service]
-ExecStart=__NVR_DIR__/web/venv/bin/python3 app.py
-WorkingDirectory=__NVR_DIR__/web
+ExecStart=/usr/bin/python3 -m http.server 8000
+WorkingDirectory=__NVR_DIR__/data
 User=__CURRENT_USER__
 Restart=always
 

@@ -13,22 +13,6 @@ chmod +x scripts/*.sh
 sudo apt update
 sudo apt install -y ffmpeg
 
-# Install Python3
-sudo apt install -y python3 python3-pip python3-venv
-
-# Create virtual environment in web directory
-echo "Creating virtual environment..."
-python3 -m venv web/venv
-
-# Activate the virtual environment
-source web/venv/bin/activate
-
-# Install Python packages
-pip install -r web/requirements.txt
-
-# Deactivate the virtual environment
-deactivate
-
 # Web Service
 sudo cp services/nvrweb.service.template /etc/systemd/system/nvrweb.service
 sudo sed -i "s|__NVR_DIR__|$NVR_DIR|g" /etc/systemd/system/nvrweb.service
@@ -92,4 +76,4 @@ done
 # Finish
 echo "NVR Installation Finished Successfully!"
 IP_ADDRESS=$(hostname -I | awk '{print $1}')
-echo "Please access to http://$IP_ADDRESS:8081/ to show the recorded videos."
+echo "Please access to http://$IP_ADDRESS:8000/ to show the recorded videos."
